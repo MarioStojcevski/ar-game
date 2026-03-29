@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-pixel: 'VT323', ui-monospace, monospace;
+  --font-pixel-title: 'Press Start 2P', ui-monospace, monospace;
+
+  --color-rpg-page: #6b6560;
+  --color-rpg-panel: #5c4a43;
+  --color-rpg-panel-dark: #4a3d38;
+  --color-rpg-ink: #1a1512;
+  --color-rpg-text: #e8e4dc;
+  --color-rpg-muted: #b8b3a8;
+  --color-rpg-bracket: #d4a84b;
+  --color-rpg-hp: #5eead4;
+  --color-rpg-mp: #f9a8d4;
+  --color-rpg-skill-a: #60a5fa;
+  --color-rpg-skill-b: #fb923c;
+}
+
+@layer base {
+  html {
+    font-size: 17px;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  body {
+    @apply min-h-svh font-pixel text-xl leading-snug text-rpg-text antialiased;
+    background-color: var(--color-rpg-page);
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 3px
+      ),
+      radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.06), transparent 50%),
+      linear-gradient(180deg, #75706a 0%, #5c5852 100%);
+  }
+
+  #app {
+    @apply min-h-svh;
+  }
+}
