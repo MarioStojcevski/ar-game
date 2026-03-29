@@ -3,7 +3,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
+  # Lets you redeploy from the Actions tab: “Run workflow” (no commit needed)
+  workflow_dispatch:
 
 permissions:
   contents: read
